@@ -1,0 +1,75 @@
+/* CSS for responsive.html */
+
+/* max-width: scale down if necessary, never scales larger than original size */
+#responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* vw: viewport width */
+h1 {
+    font-size: 10vw;
+}
+
+.boxes {
+    box-sizing: border-box; /* keeps boxes "in-line" */
+    padding: 20px;
+    float: left;
+}
+
+    .left {
+        background-color: orange;
+        width: 20%;
+    }
+
+    .mid {
+        background-color: lightblue;
+        width: 60%;
+    }
+
+    .right {
+        background-color: lightseagreen;
+        width: 20%;
+    }
+
+/* media query w/ break point at 800px; width is 100% at <= 800px */
+@media screen and (max-width: 800px) {
+    .left, .mid, .right {
+        width: 100%;
+    }
+}
+
+/* CSS for flex_boxes.html */
+
+.flex-container {
+    background-color: orange;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+
+    /*
+    flex-direction: column;
+    flex-wrap: nowrap;
+    */
+
+    /* flex-flow sets both flex-direction and flex-wrap
+    flex-flow: column nowrap;
+    */
+
+    /*
+    height: 200px;
+    justify-content: center;
+    align-items: baseline;
+    align-content: flex-end;
+    */
+}
+
+/* > is a selector where the right is the child of the left (parent) */
+.flex-container > div {
+    background-color: white;
+    width: 50px;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+}

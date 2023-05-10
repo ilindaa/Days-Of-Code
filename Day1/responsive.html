@@ -1,0 +1,36 @@
+<!-- 
+Learning Resources:
+https://www.w3schools.com/html/html_responsive.asp
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing a Responsive Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Test Responsiveness</h1>
+        <img src="./Images/cat.jpg" id="responsive-img">
+        <br><br>
+        <picture>
+            <source srcset="./Images/baby_pom.jpg" media="(max-width: 600px)">
+            <source srcset="./Images/puppy_pom.jpg" media="(max-width: 1500px)">
+            <source srcset="./Images/adult_pom.jpg">
+            <img src="./Images/baby_pom.jpg" alt="Pomeranian">
+        </picture>
+        <br><br>
+        <div class="left boxes">
+            <p>Left</p>
+        </div>
+        <div class="mid boxes">
+            <p>Middle</p>
+        </div>
+        <div class="right boxes">
+            <p>Right</p>
+        </div>
+        <br><br>
+        <a href="flex_boxes.html" style="font-size: 5vw;">Testing Flex Boxes</a>
+    </body>
+</html>
