@@ -1,0 +1,66 @@
+/* Universal Selector selects elements of any type and applies the property/value to it */
+* {
+    color: purple;
+}
+
+div {
+    color: hotpink;
+}
+
+/* elements can only have 1 id, but they can have many classes */
+.pog-text {
+    color: white;
+}
+
+#unpog {
+    background-color: red;
+    color: black;
+}
+
+body {
+    background-color: white;
+}
+
+/* thing1 and thing2's same declarations */
+.thing1, 
+.thing2 {
+    color: blue;
+    background-color: black;
+}
+
+/* thing1 and thing2's unique declarations */
+.thing1 {
+    font-weight: bold;
+}
+
+.thing2 {
+    font-weight: thin;
+}
+
+/* Chaining Selectors */
+.subsection.header {
+    color: red;
+}
+
+.subsection#preview {
+    color: green;
+}
+
+/* If the child (no matter how deep the child is) has that ancestor, the child gets selected */
+.ancestor .contents {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+p {
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+
+img {
+    height: 500px;
+    width: 500px;
+}
