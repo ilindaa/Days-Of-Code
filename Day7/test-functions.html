@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // parameters and arguments in regards to functions
+        function favoriteAnimal(animal) {
+            return animal + " is my favorite animal!";
+        }
+
+        console.log(favoriteAnimal('Pomeranian'));
+
+        // rewrite using '?' or '||'
+        function checkAge(age) {
+            return (age > 18) ? true : 
+            confirm('Did parents allow you?');
+        }
+
+        function checkAge2(age) {
+            return (age > 18) || confirm('Did parents allow you?');
+        }
+
+        // min(a,b)
+        function min(a, b) {
+            if(a < b) {
+                return a;
+            } else {
+                return b;
+            }
+        }
+
+        // pow(x,n)
+        function askUser() {
+            let x = +prompt("x?");
+            let n = +prompt("n?");
+
+            power = Math.pow(x, n);
+            if(n < 1) {
+                alert(`Power ${n} is not supported, use a positive integer`);
+            } else {
+                alert(power);
+            }
+        }
+
+        askUser();
+
+    </script>
+</body>
+</html>
