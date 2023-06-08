@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // writing some functions here - test output with console.log
+        
+        // takes one number adds 7 to it
+        function add7(num) {
+            return num + 7;
+        }
+
+        // multiplies two numbers together
+        function multiply(num1, num2) {
+            return num1 * num2;
+        }
+
+        // capitalizes only the first letter (works for strings that are in lowercase, uppercase, or both)
+        function capitalize(str) {
+            let firstChar = str.substr(0, 1);
+            let remString = str.slice(1);
+            return firstChar.toUpperCase() + remString.toLowerCase();
+        }
+
+        // takes a string and returns the very last letter of the string
+        function lastLetter(str) {
+            let len = str.length;
+            let lastChar = str.slice(len - 1);
+            return lastChar;
+        }
+
+    </script>
+</body>
+</html>
