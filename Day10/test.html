@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- defer so that the JavaScript works -->
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <!-- Method 1 not recommended due to cluttering: -->
+    <!-- <button onclick = "alert('Hello World')">Click me</button> -->
+    <!-- <button id="btn">Click Me</button> --> <!-- Method 2 -->
+    <button id="btn">Click Me Too</button> <!-- Method 3 -->
+
+    <!-- Method 1 -->
+    <button onclick="alertFunction()">CLICK ME</button>
+
+    <!-- Attaching Listeners to Groups of Nodes -->
+    <div id="container">
+        <button id="1">Click Me</button>
+        <button id="2">Click Me</button>
+        <button id="3">Click Me</button>
+    </div>
+</body>
+</html>
