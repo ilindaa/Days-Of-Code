@@ -1,0 +1,124 @@
+<!-- Local copy of oojs.html (for learning) -->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    
+    <script>
+        // object literal - write out the object contents as it is created
+        // functions that allow an *object* to do smth are called methods
+        // this. refers to the person object
+        const person = {
+            // name: ["Bob", "Smith"], // array 
+            name: { // name is an object itself
+                first: "Bob",
+                last: "Smith",
+            },
+            age: 32,
+            // less simpler syntax is bio: function() { ... }
+            bio() {
+                // console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`); // accessing from an array
+                console.log(`${this.name.first} ${this.name.last} is ${this.age} years old.`);
+            },
+            // less simpler syntax is introduceSelf: function() { ... }
+            introduceSelf() {
+                // console.log(`Hi! I'm ${this.name[0]}.`); // accessing from an array
+                console.log(`Hi! I'm ${this.name.first}.`);
+            },
+        };
+
+        function logProperty(propertyName) {
+            console.log(person[propertyName]);
+        }
+
+        logProperty("name"); // logs: ["Bob", "Smith"]
+        logProperty("age"); // logs: 32
+
+        // alter existing values by setting/reassigning values
+        person.age = 45;
+        person["name"]["last"] = "Cratchit";
+
+        logProperty("name");
+        logProperty("age");
+
+        // create new members (name, value) in the person object
+        person["eyes"] = "hazel";
+        person.farewell = function() {
+            console.log("Bye everybody!");
+        }
+
+        logProperty("eyes");
+        person.farewell();
+
+        // bracket notation (1) use is to set member names and member values dynamically (not possible through dot notation)
+        const myDataName = "height";
+        const myDataValue = "1.75m";
+        person[myDataName] = myDataValue;
+
+
+        // importance of using "this." instead of the object's name:
+        // it's the same code but for difference objects, handy
+        const person1 = {
+            name: "Chris",
+            introduceSelf() {
+                console.log(`Hi I'm ${this.name}.`);
+            }
+        }
+
+        const person2 = {
+            name: "Deepti",
+            introduceSelf() {
+                console.log(`Hi I'm ${this.name}.`);
+            }
+        }
+
+        // function to create a "person" object
+        // function has two members: a property called name and a method called introduceSelf()
+        // longwinded, see Constructors below
+
+        /*
+        function createPerson(name) {
+            const obj = {};
+            obj.name = name;
+            obj.introduceSelf = function() {
+                console.log(`Hi! I'm ${this.name}.`);
+            };
+            return obj;
+        }
+
+        const salva = createPerson("Salva");
+        console.log(salva.name);
+        salva.introduceSelf();
+
+        const frankie = createPerson("Frankie");
+        console.log(frankie.name);
+        frankie.introduceSelf();
+        */
+
+
+        // Constructors - start with a capital letter and are named after the type of object they create
+        function Person(name) {
+            this.name = name;
+            this.introduceSelf = function() {
+                console.log(`Hi! I'm ${this.name}.`);
+            };
+        }
+
+        const salva = new Person("Salva");
+        console.log(salva.name);
+        salva.introduceSelf();
+
+        const frankie = new Person("Frankie");
+        console.log(frankie.name);
+        frankie.introduceSelf();
+
+    </script>
+  </body>
+
+</html>
