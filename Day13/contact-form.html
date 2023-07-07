@@ -1,0 +1,99 @@
+<!-- Your first form code-along (for learning) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        form {
+            /* Centers the form */
+            margin: 0 auto;
+            width: 400px;
+            /* Form outline */
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        form li + li { /* 2nd and 3rd li */
+            margin-top: 1em;
+        }
+
+        label {
+            /* Uniform size & alignment */
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+        }
+
+        input, 
+        textarea {
+            /* All text fields have same font setting */
+            font: 1em sans-serif;
+            /* Uniform text field size */
+            width: 300px;
+            box-sizing: border-box;
+            /* Match form field borders */
+            border: 1px solid #999;
+        }
+
+        input:focus, 
+        textarea:focus {
+            /* Border around focused text elements */
+            border-color: #000;
+        }
+
+        textarea {
+            /* Align the multiline text fields with their labels */
+            vertical-align: top;
+            /* Provide space to type some text */
+            height: 5em;
+        }
+
+        .button {
+            /* Align buttons with the text fields (same size as the label elements) */
+            padding-left: 90px;
+        }
+
+        button {
+            /* moves the button to horizontally line up with the text fields */
+            margin-left: 0.5em;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="/my-handling-form-page" method="post">
+        <fieldset>
+            <legend>Contact</legend>
+            <!-- paragraph translates to the screenreader * means required -->
+            <p>Required fields are followed by <span aria-label="required">*</span>.</p>
+            <ul>
+                <li>
+                    <!-- nest the aria-label in the label for screenreaders "name required edit text" -->
+                    <label for="name">Name: <span aria-label="required">*</span> </label>
+                    <input type="text" id="name" name="user_name" required>
+                </li>
+                <li>
+                    <label for="mail">E-mail:</label>
+                    <input type="email" id="mail" name="user_email">
+                </li>
+                <li>
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" name="user_message"></textarea>
+                </li>
+                <li class="button">
+                    <button type="submit">Send your message</button>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

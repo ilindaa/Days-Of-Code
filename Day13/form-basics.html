@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Basics Practice</title>
+</head>
+<body>
+    <form action="example.com/path" method="post">
+
+        <!-- FIELDSET
+        * groups related form inputs into one box
+        * LEGEND is the fieldset's heading/caption
+        -->
+        <fieldset>
+            <legend>Form Practice Stuff Grouped Together</legend>
+
+            <!-- TEXT -->
+            <div>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" placeholder="Rick..." name="first_name">
+            </div>
+            <div>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" placeholder="Astley..." name="last_name">
+            </div>
+            <!-- NUMBER -->
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="18" name="age" min="1" max="150">
+            </div>
+            
+            <!-- EMAIL -->
+            <div>
+                <label for="user_email">Email Address:</label>
+                <input type="email" id="user_email" placeholder="youremail@example.com" name="email">
+            </div>
+            <!-- PASSWORD -->
+            <div>
+                <label for="user_password">Password:</label>
+                <input type="password" id="user_password" name="password">
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount">
+            </div>
+            <!-- DATE -->
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+            <!-- TEXTAREA -->
+            <div>
+                <textarea rows="20" cols="60">Never gonna give you up...Never gonna let you down...</textarea>
+            </div>
+            
+            <!-- SELECT
+            * (dropdown list)
+            * optgroup (split options into groups)
+            -->
+            <div>
+                <select name="Animal">
+                    <optgroup label="Land">
+                        <option value="dog" selected>Dog</option> <!-- selected -->
+                        <option value="cat">Cat</option>
+                        <option value="bunny">Bunny</option>
+                        <option value="bear">Bear</option>
+                    </optgroup>
+                    <optgroup label="Sea 🐢🐳">
+                        <option value="turtle">Turtle</option>
+                        <option value="whale">Whale</option>
+                    </optgroup>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Gender</legend>
+            <!-- RADIO BUTTONS
+            * name specifies the group 
+            -->
+            <div>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <div>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+            </div>
+
+            <div>
+                <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+                <label for="nonbinary">Nonbinary</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Pog?</legend>
+        <!-- DIFF GROUP
+        * b/c name is pog -->
+        <div>
+            <input type="radio" id="pog" name="pog" value="pog" checked> <!-- checked -->
+            <label for="pog">Pog</label>
+        </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Which Programming Languages Are Pog?</legend>
+            <!-- CHECKBOX -->
+            <div>
+                <input type="checkbox" id="java" name="programming" value="java">
+                <label for="java">Java</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="python" name="programming" value="python">
+                <label for="python">Python</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="javascript" name="programming" value="javascript" checked> <!-- checked -->
+                <label for="javascript">JavaScript</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Subscribe to the Newsletter</legend>
+            <!-- SINGLE CHECKBOX -->
+            <div>
+                <input type="checkbox" id="newsletter" name="news_letter" checked>
+                <label for="newsletter">Send me news letters forever</label>
+            </div>
+        </fieldset>
+
+        <!-- 3 BUTTON TYPES
+        * buttons have a type attribute with the value "submit" by default, important to specify the value
+        -->
+
+        <!-- GENERIC BUTTON -->
+        <button type="button">Click to Toggle</button>
+        
+        
+        <!-- RESET BUTTON -->
+        <button type="reset">Reset</button>
+        
+        <!-- SUBMIT -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
