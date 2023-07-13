@@ -1,0 +1,16 @@
+.container {
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 50px 50px;
+    /* 1 track can be 5x as large as the other tracks; short-hand property below */
+    /* grid-template: 50px 50px / 250px 50px 50px; */
+    /* (implicit) grid-auto-rows: 50px; */
+    /* more: grid-auto-flow, (implicit) grid-auto-columns */
+    column-gap: 10px;
+    row-gap: 100px;
+    /* shorthand: gap */
+}
+
+.container > div {
+    border: 1px solid blue;
+}
