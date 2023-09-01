@@ -13,7 +13,7 @@ function createMenu() {
   dropdownDiv.appendChild(dropdownBtn);
   dropdownDiv.appendChild(dropdownContentDiv);
 
-  let creditArray = [
+  const creditArray = [
     ["Diego PH", "https://unsplash.com/photos/BCuxVP5WEsU"],
     ["Dominik Schröder", "https://unsplash.com/photos/FIKD9t5_5zQ"],
     ["Guillaume Galtier", "https://unsplash.com/photos/3YrppYQPoCI"],
@@ -33,7 +33,7 @@ function createMenu() {
 
 function createImageSlider() {
   let currentIndex = 0;
-  let imgArray = [
+  const imgArray = [
     "./Images/diego-ph-BCuxVP5WEsU-unsplash.jpg", // Diego PH: https://unsplash.com/photos/BCuxVP5WEsU
     "./Images/dominik-schroder-FIKD9t5_5zQ-unsplash.jpg", // Dominik Schroder: https://unsplash.com/photos/FIKD9t5_5zQ
     "./Images/guillaume-galtier-3YrppYQPoCI-unsplash.jpg", // Guillaume Galtier: https://unsplash.com/photos/3YrppYQPoCI
