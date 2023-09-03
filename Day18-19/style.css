@@ -1,7 +1,12 @@
+select,
 input {
   outline: none;
-  border-radius: 0.25rem;
   padding: 0.25rem;
+}
+
+select,
+input:invalid:placeholder-shown {
+  border: 1px solid black;
 }
 
 input:invalid {
@@ -10,4 +15,8 @@ input:invalid {
 
 input:valid {
   border: 2px solid green;
+}
+
+span {
+  color: red;
 }
