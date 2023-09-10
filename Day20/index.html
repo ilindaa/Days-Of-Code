@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with APIs</title>
+  </head>
+  <body>
+    <img src="#" />
+    <script>
+      const img = document.querySelector("img");
+      const apiKey = "Fa0s7aTxJqxw19svhBvtrwCHCgyJyblZ"; // This is a free public API key, will learn how to handle keys without pushing to front-end later
+      let searchContent = "pomeranian";
+
+      const body = document.body;
+      const searchDiv = document.createElement("div");
+      const searchBar = document.createElement("input");
+      const button = document.createElement("button");
+
+      searchBar.type = "text";
+      button.type = "button";
+
+      searchBar.placeholder = "Search...";
+      button.textContent = "Find Gif";
+
+      searchDiv.id = "search-div";
+      searchBar.id = "search-bar";
+
+      button.addEventListener("click", searchGif);
+
+      body.appendChild(searchDiv);
+      searchDiv.appendChild(searchBar);
+      searchDiv.appendChild(button);
+
+      function searchGif() {
+        const searchBar = document.getElementById("search-bar");
+        searchContent = searchBar.value;
+
+        fetch(
+          `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${searchContent}`,
+          { mode: "cors" }
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (response) {
+            if (response.data.length !== 0) {
+              img.src = response.data.images.original.url;
+            } else {
+              img.src =
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzV4bHdqaHllY3R6ZWV4Z2Z4dHA4ZjE5azF1djNmMzhqdXBnbGVvOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3zhxq2ttgN6rEw8SDx/giphy.gif";
+            }
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+      }
+
+      searchGif();
+    </script>
+  </body>
+</html>
